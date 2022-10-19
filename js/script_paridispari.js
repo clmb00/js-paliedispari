@@ -43,6 +43,7 @@ function checkPariDispari(isPari,somma){
 }
 
 function wrongInput(num){
+  if (isNaN(num)) return true;
   if (num<1 || num>5){
     return true;
   } else {
