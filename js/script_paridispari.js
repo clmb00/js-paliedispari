@@ -6,6 +6,10 @@ document.addEventListener('keypress', function(event){
   outputBox.classList.remove('text-green-700', 'font-bold', 'text-red-700');
   const aiBox = document.getElementById('aiNumber');
   const numberUser = parseInt(document.querySelector('[type=text]').value);
+  if (wrongInput(numberUser)) {
+    alert('Inserisci un numero tra 1 e 5');
+    return;
+  }
   //True se è pari, False se è dispari
   const choiceUser = document.getElementById('pari').checked;
 
@@ -31,6 +35,14 @@ function checkPariDispari(isPari,num1,num2){
   if(isPari && !(somma%2)){
     return true;
   } else if(!isPari && somma%2){
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function wrongInput(num){
+  if (num<1 || num>5){
     return true;
   } else {
     return false;
